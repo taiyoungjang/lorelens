@@ -89,12 +89,13 @@ const translations = {
     'RECOMMENDED': '권장',
     'PREVIEW': '미리보기',
     'MSI installer': 'MSI 설치 프로그램',
-    'Download the MSI, close LoreLens if it is open, then run the installer. It installs LoreLens and the bundled Lore CLI, and upgrades an existing installation.': 'MSI를 다운로드하고 LoreLens가 열려 있다면 닫은 뒤 설치 프로그램을 실행하세요. LoreLens와 번들 Lore CLI를 설치하며 기존 설치도 업그레이드합니다.',
-    'Download latest MSI': '최신 MSI 다운로드',
+    'Close LoreLens if it is open, then run the MSI to install or upgrade the app. Install the Lore CLI separately.': 'LoreLens가 열려 있다면 닫은 뒤 MSI를 실행해 앱을 설치하거나 업그레이드하세요. Lore CLI는 별도로 설치하세요.',
+    'Download MSI (x64)': 'MSI 다운로드 (x64)',
     'DMG installer': 'DMG 설치 프로그램',
-    'When a DMG is available on the release page, open it and drag LoreLens to Applications. On first launch, approve it in System Settings if macOS blocks the app.': '릴리스 페이지에 DMG가 제공되면 열어서 LoreLens를 응용 프로그램으로 드래그하세요. macOS가 첫 실행을 차단하면 시스템 설정에서 허용하세요.',
-    'Check latest release': '최신 릴리스 확인',
-    'macOS DMG packages are not published yet. The release page is the source for signed platform installers.': 'macOS DMG 패키지는 아직 배포되지 않았습니다. 서명된 플랫폼 설치 프로그램은 릴리스 페이지에서 확인할 수 있습니다.',
+    'Open the DMG for your Mac and drag LoreLens to Applications. Install the Lore CLI separately.': 'Mac에 맞는 DMG를 열어 LoreLens를 응용 프로그램으로 드래그하세요. Lore CLI는 별도로 설치하세요.',
+    'Download for Apple Silicon': 'Apple Silicon용 다운로드',
+    'Download for Intel': 'Intel용 다운로드',
+    'The MSI is unsigned. The macOS apps are ad-hoc signed and not notarized.': 'MSI는 서명되지 않았습니다. macOS 앱은 임시 서명되었으며 Apple 공증을 받지 않았습니다.',
     'PowerShell · Run from the source repository root': 'PowerShell · 소스 저장소 루트에서 실행',
     'Copy': '복사',
     '01 / Connect the CLI': '01 / CLI 연결',
@@ -258,12 +259,13 @@ const translations = {
     'RECOMMENDED': '推荐',
     'PREVIEW': '预览',
     'MSI installer': 'MSI 安装程序',
-    'Download the MSI, close LoreLens if it is open, then run the installer. It installs LoreLens and the bundled Lore CLI, and upgrades an existing installation.': '下载 MSI，关闭正在运行的 LoreLens，然后运行安装程序。它会安装 LoreLens 和捆绑的 Lore CLI，并升级现有版本。',
-    'Download latest MSI': '下载最新 MSI',
+    'Close LoreLens if it is open, then run the MSI to install or upgrade the app. Install the Lore CLI separately.': '如果 LoreLens 正在运行，请先关闭，然后运行 MSI 安装或升级应用。请单独安装 Lore CLI。',
+    'Download MSI (x64)': '下载 MSI（x64）',
     'DMG installer': 'DMG 安装程序',
-    'When a DMG is available on the release page, open it and drag LoreLens to Applications. On first launch, approve it in System Settings if macOS blocks the app.': '发布页提供 DMG 后，打开它并将 LoreLens 拖到“应用程序”。如果 macOS 阻止首次启动，请在系统设置中允许。',
-    'Check latest release': '查看最新版本',
-    'macOS DMG packages are not published yet. The release page is the source for signed platform installers.': 'macOS DMG 软件包尚未发布。请从发布页获取已签名的平台安装程序。',
+    'Open the DMG for your Mac and drag LoreLens to Applications. Install the Lore CLI separately.': '打开适用于您 Mac 的 DMG，将 LoreLens 拖到“应用程序”。请单独安装 Lore CLI。',
+    'Download for Apple Silicon': '下载 Apple Silicon 版',
+    'Download for Intel': '下载 Intel 版',
+    'The MSI is unsigned. The macOS apps are ad-hoc signed and not notarized.': 'MSI 未签名。macOS 应用使用临时签名，未经 Apple 公证。',
     'PowerShell · Run from the source repository root': 'PowerShell · 在源代码仓库根目录运行',
     'Copy': '复制',
     '01 / Connect the CLI': '01 / 连接 CLI',
@@ -402,7 +404,7 @@ applyLanguage(supportedLanguages.includes(saved) ? saved : browserLanguage ?? 'e
 
 const latestReleaseElement = document.querySelector('[data-latest-release]');
 if (latestReleaseElement) {
-  fetch('https://api.github.com/repos/zenogrid-law80/lorelens/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/taiyoungjang/lorelens/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(response => response.ok ? response.json() : Promise.reject(new Error(`GitHub release request failed: ${response.status}`)))
     .then(release => {
       if (release.tag_name && !release.draft && !release.prerelease) latestReleaseElement.textContent = release.tag_name;

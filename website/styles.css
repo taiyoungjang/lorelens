@@ -1035,6 +1035,12 @@ select:focus-visible,
   flex-grow: 1;
 }
 
+.download-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
 .download-release {
   display: inline-flex;
   align-items: center;

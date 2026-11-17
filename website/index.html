@@ -80,7 +80,7 @@
       <p class="hero-intro">See every change. Know your next step. Manage your Lore files, commits, and branches in a high-performance desktop app built with Rust and GPUI.</p>
 
       <div class="hero-actions">
-        <a class="button button-primary" href="https://github.com/taiyoungjang/lorelens" target="_blank" rel="noopener noreferrer">
+        <a class="button button-primary" href="https://github.com/taiyoungjang/lorelens/releases/download/v0.1.38/LoreLens-0.1.38.msi" target="_blank" rel="noopener noreferrer">
           <span class="symbol symbol-filled">download</span>
           <span>Download for Windows</span>
         </a>
@@ -91,9 +91,9 @@
       </div>
 
       <div class="hero-meta">
-        <a class="release-pill" href="https://github.com/taiyoungjang/lorelens" target="_blank" rel="noopener noreferrer" aria-label="View the LoreLens repository on GitHub">
+        <a class="release-pill" href="https://github.com/taiyoungjang/lorelens/releases/latest" target="_blank" rel="noopener noreferrer" aria-label="View the latest LoreLens release on GitHub">
           <span class="release-tag">Latest release</span>
-          <span class="release-version" data-latest-release>v0.1.31</span>
+          <span class="release-version" data-latest-release>v0.1.38</span>
           <span class="symbol symbol-sm" aria-hidden="true">open_in_new</span>
         </a>
         <div class="tech-stack-strip">
@@ -238,9 +238,9 @@
               <span class="package-badge">RECOMMENDED</span>
             </div>
             <h3>MSI installer</h3>
-            <p>Download the MSI, close LoreLens if it is open, then run the installer. It installs LoreLens and the bundled Lore CLI, and upgrades an existing installation.</p>
-            <a class="download-release" href="https://github.com/taiyoungjang/lorelens" target="_blank" rel="noopener noreferrer">
-              <span>Download latest MSI</span>
+            <p>Close LoreLens if it is open, then run the MSI to install or upgrade the app. Install the Lore CLI separately.</p>
+            <a class="download-release" href="https://github.com/taiyoungjang/lorelens/releases/download/v0.1.38/LoreLens-0.1.38.msi" target="_blank" rel="noopener noreferrer">
+              <span>Download MSI (x64)</span>
               <span class="symbol symbol-sm">arrow_forward</span>
             </a>
           </article>
@@ -251,15 +251,21 @@
               <span class="package-badge">PREVIEW</span>
             </div>
             <h3>DMG installer</h3>
-            <p>When a DMG is available on the release page, open it and drag LoreLens to Applications. On first launch, approve it in System Settings if macOS blocks the app.</p>
-            <a class="download-release" href="https://github.com/taiyoungjang/lorelens" target="_blank" rel="noopener noreferrer">
-              <span>Check latest release</span>
-              <span class="symbol symbol-sm">arrow_forward</span>
-            </a>
+            <p>Open the DMG for your Mac and drag LoreLens to Applications. Install the Lore CLI separately.</p>
+            <div class="download-links">
+              <a class="download-release" href="https://github.com/taiyoungjang/lorelens/releases/download/v0.1.38/LoreLens-0.1.38-macos-arm64.dmg" target="_blank" rel="noopener noreferrer">
+                <span>Download for Apple Silicon</span>
+                <span class="symbol symbol-sm">arrow_forward</span>
+              </a>
+              <a class="download-release" href="https://github.com/taiyoungjang/lorelens/releases/download/v0.1.38/LoreLens-0.1.38-macos-x86_64.dmg" target="_blank" rel="noopener noreferrer">
+                <span>Download for Intel</span>
+                <span class="symbol symbol-sm">arrow_forward</span>
+              </a>
+            </div>
           </article>
         </div>
 
-        <p class="package-note">macOS DMG packages are not published yet. The release page is the source for signed platform installers.</p>
+        <p class="package-note">The MSI is unsigned. The macOS apps are ad-hoc signed and not notarized.</p>
 
         <!-- Terminal Box -->
         <div class="terminal-box">
