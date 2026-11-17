@@ -1,0 +1,7 @@
+[workspace]
+members = [ "lorelens" ]
+
+resolver = "3"
+
+[profile.dev]
+debug = 0
